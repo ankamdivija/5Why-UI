@@ -14,7 +14,7 @@
             <div *ngIf='!showInput'>
                     <p style="margin: 0px; padding: 10px 30px;"><b> {{ psA1 }} </b> </p> 
             </div>
-            <div *ngIf='!showInput && count<=1 &&showInput1'>
+            <div *ngIf='!showInput && count==1 &&showInput1'>
                     <p><b>Answer2 (Why above answer?):</b> </p> 
                     <div *ngIf='showInput1' class="form-group">
                         <input type="text-area" [(ngModel)]='psA2' class="form-input" name="psa" id="psa" placeholder="Answer2"/>
