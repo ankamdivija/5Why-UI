@@ -9,8 +9,10 @@ import { HomePageComponent } from '../homePage/homePage.component'
 })
 export class AppComponent {
   @ViewChild(HomePageComponent, {static: false} ) hp :HomePageComponent ;
+  @ViewChild(HomePageComponent, {static: false} ) pp :HomePageComponent ;
   homepage = true;
-  
+  name1: string;
+  ps1: string;
   ngOnInit() {
     this.hp.name='';
     this.hp.ps='';
@@ -18,6 +20,8 @@ export class AppComponent {
   }
   submit() : void{
         this.homepage = false;
+        this.name1=this.hp.name;
+        this.ps1 = this.hp.ps; 
         console.log(this.homepage);
   }
 }

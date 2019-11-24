@@ -1,36 +1,70 @@
 <div class="main main-body">
-        <section class="signup">
-            <div class="container">
-                 <div class="signup-content">
-                    <form method="POST" id="signup-form" class="signup-form">
-                          <h2 class="form-title">Who are you?</h2>
-                          <div class="form-group">
-                              <input type="text" class="form-input" name="name" id="name" placeholder="Name"/>
-                          </div>
-                          <div class="form-group">
-                              <input type="email" class="form-input" name="email" id="email" placeholder="Email"/>
-                          </div>
-                          <div class="form-group">
-                              <input type="text-area" class="form-input" name="password" id="password" placeholder="Problem Statement"/>
-                              <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
-                          </div>
-                          <div class="form-group">
-                              <div class="radio-inline">
-                                  <label class="label-agree-term"><input type="radio" name="optradio" checked>Individual</label>
-                                  <label class="label-agree-term"><input type="radio" name="optradio">Team</label>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <input type="submit" name="submit" id="submit" class="form-submit" value="Start Why's"/>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          </section>
-        
-        </div>
-        
-        <!-- JS -->
-        <script src="../vendor/jquery/jquery.min.js"></script>
-        <script src="../js/main.js"></script>
+    <div>
+            <p style="margin: 0px; font-size: xx-large; padding: 20px 35px; color: black;"><b>Hi {{ name }} ,</b></p>
+            <p style="color:black; font-size: x-large; margin: 0px; padding: 0px 20px 20px 140px"><b>Start answering your Problem Statement</b></p>
+    </div>
     
+    <div class="container">
+        <div class="signup-content">
+            <p style="font-size: large;"><b>Problem Statement : {{ ps }} ?</b></p> 
+            <p><b>Answer1 :</b> </p> 
+            <div *ngIf='showInput' class="form-group">
+                <input type="text-area" [(ngModel)]='psA1' class="form-input" name="psa" id="psa" placeholder="Answer1"/>
+            </div>
+            <div *ngIf='!showInput'>
+                    <p style="margin: 0px; padding: 10px 30px;"><b> {{ psA1 }} </b> </p> 
+            </div>
+            <div *ngIf='!showInput && count<=1 &&showInput1'>
+                    <p><b>Answer2 (Why above answer?):</b> </p> 
+                    <div *ngIf='showInput1' class="form-group">
+                        <input type="text-area" [(ngModel)]='psA2' class="form-input" name="psa" id="psa" placeholder="Answer2"/>
+                    </div>
+            </div>
+                    <div *ngIf='!showInput1'>
+                            <p><b>Answer2 (Why above answer?):</b> </p> 
+                            <p style="margin: 0px; padding: 10px 30px;"><b> {{ psA2 }} </b> </p> 
+                    </div>
+            <div *ngIf='!showInput1 &&showInput2 && count==2'>
+                    <p><b>Answer3 (Why above answer?):</b> </p> 
+                    <div *ngIf='showInput2' class="form-group">
+                        <input type="text-area" [(ngModel)]='psA3' class="form-input" name="psa" id="psa" placeholder="Answer3"/>
+                    </div>
+            </div>
+            <div *ngIf='!showInput2'>
+                    <p><b>Answer3 (Why above answer?):</b> </p> 
+                    <p style="margin: 0px; padding: 10px 30px;"><b> {{ psA3 }} </b> </p> 
+            </div>
+            <div *ngIf='!showInput2 &&showInput3 && count==3'>
+                    <p><b>Answer4 (Why above answer?):</b> </p> 
+                    <div *ngIf='showInput3' class="form-group">
+                        <input type="text-area" [(ngModel)]='psA4' class="form-input" name="psa" id="psa" placeholder="Answer4"/>
+                    </div>
+            </div>
+            <div *ngIf='!showInput3'>
+                    <p><b>Answer4 (Why above answer?):</b> </p> 
+                    <p style="margin: 0px; padding: 10px 30px;"><b> {{ psA4 }} </b> </p> 
+            </div>
+            <div *ngIf='!showInput3 &&showInput4 && count==4'>
+                    <p><b>Answer5 (Why above answer?):</b> </p> 
+                    <div *ngIf='showInput4' class="form-group">
+                        <input type="text-area" [(ngModel)]='psA5' class="form-input" name="psa" id="psa" placeholder="Answer5"/>
+                    </div>
+            </div>   
+            <div *ngIf='!showInput4'>
+                    <p><b>Answer5 (Why above answer?):</b> </p> 
+                    <p style="margin: 0px; padding: 10px 30px;"><b> {{ psA5 }} </b> </p> 
+            </div>         
+            <div *ngIf='!finish' style="padding-left: 350px;">
+                    <div class="form-group" style="padding: 20px; margin:0px; display: inline-block">
+                            <input type="submit" name="Done" id="done" class="form-submit" (click)='done()' value="Done"/>
+                        </div>  
+                        <div class="form-group" style="padding: 20px; margin:0px; display: inline-block">
+                            <input type="submit" name="add" id="add" class="form-submit" (click)='add()' value="Add"/>
+                        </div> 
+            </div>
+            <div *ngIf='finish'>
+                <p><b>Congrats!! You have reached your root cause!</b></p>
+            </div>
+        </div>
+    </div>
+</div>
