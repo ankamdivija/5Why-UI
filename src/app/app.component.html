@@ -1,4 +1,3 @@
-<div style="margin: 0;">
 <div class="header-body">
     <div class="header">
         <a href="#default" class="logo">5 Why?</a>
@@ -7,44 +6,13 @@
           <a href="#contact">Contact</a>
           <a href="#about">About</a>
         </div>
-      </div>
-</div>
-<div class="main main-body">
-    <section class="signup">
-        <div class="container">
-             <div class="signup-content">
-                <form method="POST" id="signup-form" class="signup-form">
-                      <h2 class="form-title">Who are you?</h2>
-                      <div class="form-group">
-                          <input type="text" class="form-input" name="name" id="name" placeholder="Name"/>
-                      </div>
-                      <div class="form-group">
-                          <input type="email" class="form-input" name="email" id="email" placeholder="Email"/>
-                      </div>
-                      <div class="form-group">
-                          <input type="text-area" class="form-input" name="password" id="password" placeholder="Problem Statement"/>
-                          <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
-                      </div>
-                      <div class="form-group">
-                          <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                          <label for="agree-term" class="label-agree-term"><span><span></span></span>Individual </label>
-                          <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                          <label for="agree-term" class="label-agree-term"><span><span></span></span>Team  </label>
-                      </div>
-                      <div class="form-group">
-                          <input type="submit" name="submit" id="submit" class="form-submit" value="Start Why's"/>
-                      </div>
-                  </form>
-              </div>
-          </div>
-      </section>
-    
     </div>
-    
-    <!-- JS -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../js/main.js"></script>
+</div>
+<!-- <router-outlet></router-outlet> -->
+<div *ngIf='homepage'>
+  <home-page [name]='name' [email]='email' [ps]='ps' (submit)='submit()'></home-page>
+</div>
+<div *ngIf='!homepage'>
+  <post-page></post-page>
 </div>
 
-
-<router-outlet></router-outlet>

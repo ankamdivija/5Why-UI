@@ -1,0 +1,33 @@
+<div class="main main-body">
+        <section class="signup">
+            <div class="container">
+                 <div class="signup-content">
+                    <form method="POST" id="signup-form" class="signup-form">
+                          <h2 class="form-title">Who are you?</h2>
+                          <div class="form-group">
+                              <input type="text" [(ngModel)]='name' class="form-input" name="name" id="name" placeholder="Name"/>
+                          </div>
+                          <div class="form-group">
+                              <input type="email" [(ngModel)]='email' class="form-input" name="email" id="email" placeholder="Email"/>
+                          </div>
+                          <div class="form-group">
+                              <input type="text-area" [(ngModel)]='ps' class="form-input" name="ps" id="ps" placeholder="Problem Statement"/>
+                          </div>
+                          <div class="form-group">
+                              <div class="radio-inline">
+                                  <label class="label-agree-term"><input type="radio" name="optradio" checked>Individual</label>
+                                  <label class="label-agree-term"><input type="radio" name="optradio">Team</label>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <input type="submit" name="submit" id="submit" class="form-submit" (click)='startY()' value="Start Why's"/>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+        </section>   
+</div>
+<!-- JS -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../js/main.js"></script>
+    
