@@ -9,6 +9,12 @@ export class PostPageComponent {
   @Input() name : string= '';
   @Input() email : string ='';
   @Input() ps :string ='' ;
+  psA1:string;
+  psA2:string;
+  psA3:string;
+  psA4:string;
+  psA5:string;
+  
   finish: boolean=false;
   showInput: boolean = true;
   showInput1: boolean = true;

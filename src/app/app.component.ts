@@ -11,6 +11,7 @@ export class AppComponent {
   @ViewChild(HomePageComponent, {static: false} ) hp :HomePageComponent ;
   homepage = true;
   name1: string = '';
+  email1: string= '';
   ps1: string = '';
   ngOnInit() {
     this.hp.name='';
